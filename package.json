@@ -1,0 +1,22 @@
+{
+  "name": "full-stack-hono-js",
+  "scripts": {
+    "dev": "bun run --hot src/index.ts",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "auth:generate": "bunx @better-auth/cli@latest generate --config ./src/lib/auth.ts --output ./src/features/auth/db/schema.ts -y",
+    "auth:migrate": "bunx @better-auth/cli@latest migrate --config ./src/lib/auth.ts -y"
+  },
+  "dependencies": {
+    "@hono/zod-validator": "^0.9.1",
+    "@libsql/client": "^0.18.0",
+    "better-auth": "^1.7.7",
+    "drizzle-orm": "^0.45.3",
+    "hono": "^4.13.13",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "drizzle-kit": "^0.31.11"
+  }
+}
